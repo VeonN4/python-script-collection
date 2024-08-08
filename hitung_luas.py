@@ -1,7 +1,7 @@
 import time
 
 def display_menu():
-    menu = ['Hitung Luas Persegi', 'Hitung Luas Kubus', 'Hitung Volume Balok', 'Exit']
+    menu = ['Hitung Luas Persegi', 'Hitung Luas Kubus', 'Hitung Volume Balok', 'Hitung Luas Lingkaran', 'Hitung Luas Trapesium', 'Exit']
 
     print("MENU")
 
@@ -62,6 +62,38 @@ def hitung_volume_balok():
     time.sleep(1.2)
     print('\n')
 
+def hitung_luas_lingkaran():
+    print("="*30)
+    print('\tHITUNG LUAS LINGKARAN')
+    print("="*30)
+
+    jari_jari = int(input("Masukan nilai jari-jari\t: "))
+
+    ruas_jari_jari = int(input("Masukan nilai ruas jari-jari\t: "))
+
+    hasil = 22/7 * jari_jari**2
+    hasil2 = 2 * 22/7 * ruas_jari_jari
+
+    print("Luas Lingkaran\t\t:", hasil, "cm2")
+    print("Keliling Lingkaran\t\t:", hasil2, "cm2")
+    time.sleep(1.2)             
+    print('\n')
+
+def hitung_luas_trapesium():
+    print("="*30)
+    print('\tHITUNG LUAS TRAPESIUM')
+    print("="*30)
+
+    tinggi = int(input("Masukan nilai tinggi\t: "))
+    sisi = int(input("Masukan nilai sisi\t: "))
+    sisi2 = int(input("Masukan nilai sisi ke 2\t: "))
+
+    hasil = 0.5 * (sisi + sisi2) * tinggi 
+
+    print("Volume Balok\t\t:", hasil, "cm2")
+    time.sleep(1.2)
+    print('\n')
+
 def main():
     while True:
         choice = display_menu()
@@ -71,6 +103,10 @@ def main():
             hitung_luas_kubus()
         elif choice == 3:
             hitung_volume_balok()
+        elif choice == 4:
+            hitung_luas_lingkaran()
+        elif choice == 5:
+            hitung_luas_trapesium()
         else:
             print("Goodbye!")
             time.sleep(1)
