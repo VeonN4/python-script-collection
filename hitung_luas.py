@@ -35,9 +35,10 @@ def hitung_luas_kubus():
     angka = int(input("Masukan nilai sisi\t: "))
 
     luas = 6 * angka
+    volume = angka**3
 
     print('Luas Kubus\t\t:', luas, "cm2")
-    print('Volume Kubus\t\t:', angka, "cm2")
+    print('Volume Kubus\t\t:', volume, "cm2")
     time.sleep(1.2)
     print('\n')
 
