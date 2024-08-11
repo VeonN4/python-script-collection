@@ -1,15 +1,23 @@
-print('Hello world')
-print(69 * 69)
-print('''
-Aku sayang kamu juga sayang tapi sayang kita berjauhan
-tahan-tahan ku tahan semalam
-''')
+class User:
+    def __init__(self, name, pin, uang, status):
+        self.name   = name
+        self.pin    = pin
+        self.uang   = uang
+        self.status = status
 
-import random
-a = random.randint(1,100)
+    def increaseUang(self, uang, inputUang):
+        self.uang += inputUang
 
-print(f"""
-Nama\t:  Muhammad Razfaziya Adinata
-Usia\t:  16 tahun
-Sigma\t:  {a}%
-""")
+    def changePin(self, pin, newPin):
+        self.pin = newPin
+
+users = [
+    User("Hendri", 6969, 9999999999999999, False),
+    User("Asep", 5382, 7992000, False),
+    User("Yudi", 2331, 20000000, False)
+]
+
+if "Hendri" in users["Hendri"]:
+    print("Yes")
+else:
+    print("Nuh uh")

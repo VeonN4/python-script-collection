@@ -11,21 +11,22 @@ class User:
     def changePin(self, pin, newPin):
         self.pin = newPin
 
-def login(user):
+def login(user, currentlyLogin):
     username = input("Masukan Nama: ")
 
-    confirmed = 0
+    currentlyLogin = []
 
     for i in range(len(user)):
         a = user[i].name
         if a == username:
-            confirmed = 1
+            userData = user[i].name, user[i].pin, user[i].status, user[i].uang
+            currentlyLogin.append(userData)
             break
 
-    if not a == username:
+    if a != username:
         print("Try again.")
 
-    return confirmed
+    return currentlyLogin
 
 def display_menu():
     menu = ["Deposit", "Tarik", "Change PIN", "Exit"]
@@ -57,12 +58,15 @@ def main():
 
     choice = 0
 
+    currentlyLogin = []
+
     while True:
-        loginCheck = login(users)
-        if loginCheck == 1:
+        loginCheck = login(users, currentlyLogin)
+        if loginCheck:
+            currentlyLogin.append(loginCheck)
             break
 
-    if loginCheck == 1:
+    if loginCheck:
         while True:
             choice = display_menu()
             if choice == 1:
