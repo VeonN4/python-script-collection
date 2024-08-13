@@ -35,9 +35,10 @@ def hitung_luas_kubus():
     angka = int(input("Masukan nilai sisi\t: "))
 
     luas = 6 * angka
+    volume = angka**3
 
     print('Luas Kubus\t\t:', luas, "cm2")
-    print('Volume Kubus\t\t:', angka, "cm2")
+    print('Volume Kubus\t\t:', volume, "cm2")
     time.sleep(1.2)
     print('\n')
 
@@ -71,8 +72,8 @@ def hitung_luas_lingkaran():
 
     ruas_jari_jari = int(input("Masukan nilai ruas jari-jari\t: "))
 
-    hasil = 22/7 * jari_jari**2
-    hasil2 = 2 * 22/7 * ruas_jari_jari
+    hasil = int(22/7 * jari_jari**2)
+    hasil2 = int(2 * 22/7 * ruas_jari_jari)
 
     print("Luas Lingkaran\t\t:", hasil, "cm2")
     print("Keliling Lingkaran\t\t:", hasil2, "cm2")
@@ -103,23 +104,6 @@ def hitung_luas_trapesium():
 
     print("Luas Trapesium\t\t:", hasil, "cm2")
     print("Keliling Trapesium\t\t:", hasil2, "cm2")
-    time.sleep(1.2)
-    print('\n')
-
-def hitung_luas_segitiga():
-    print("="*30)
-    print('\tHITUNG LUAS SEGITIGA')
-    print("="*30)
-
-    alas = int(input("Masukan nilai alas\t: "))
-    tinggi = int(input("Masukan nilai tinggi\t: "))
-    sisi = int(input("Masukan nilai sisi\t: "))
-
-    hasil = 0.5 * alas * tinggi
-    hasil2 = 3 * sisi
-
-    print("Luas Segitiga\t\t:", hasil, "cm2")
-    print("Keliling Segitiga\t\t:", hasil2, "cm2")
     time.sleep(1.2)
     print('\n')
 
