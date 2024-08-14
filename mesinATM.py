@@ -6,51 +6,53 @@ class User:
         self.status = status
 
     def deposit(self, inputUang):
+        if self.uang - inputUang < 0:
+            print("Nuh uh")
+            return
+
         self.uang += inputUang
 
     def tarik(self, inputUang):
         if self.uang - inputUang < 0:
             print("Nuh uh")
-        else:
-            self.uang -= inputUang
+            return
 
+        self.uang -= inputUang
 
     def changePin(self, newPin):
         if len(newPin) > 4:
             print("Pin jangan melebihi dari 4 angka")
-        else:
-            int(newPin)
-            self.pin = newPin
-
-
-    def changeStatus(self, status):
-        self.status = status
+            return
+        
+        int(newPin)
+        self.pin = newPin
 
 def login(user):
-    while True:
+    a = True
+    foundUser = False
+
+    while a:
         print("\tLOGIN ATM")
 
         username = input("Masukan Nama: ")
 
-        userdata = 0
-
         for i in range(len(user)):
             if username == user[i].name:
-                userdata = user[i].name
-                user[i].changeStatus(True)
+                user[i].status = True
                 print("Logged in")
-                break
-        
-        if userdata == username:
-            break
+                a = False
+                foundUser = True
 
-        if userdata == 0:
-            print("Coba lagi.")
-
-    return userdata
+        if not foundUser:
+            print("User not found")
+    
+    return username
 
 def statusCheck(user):
     status = [user for user in user if user.status]
+
+    for i in status:
+        print(i)
 
     return status
 
@@ -77,8 +79,9 @@ def deposit(users):
 
     if inputUang <= 0:
         print("Kamu tidak bisa memasukan uang dibawah 0")
-    else:
-        user[0].deposit(inputUang)
+        return
+
+    user[0].deposit(inputUang)
 
 def tarik(users):
     print("\n\tMenu Tarik")
@@ -91,8 +94,9 @@ def tarik(users):
 
     if inputUang <= 0:
         print("Kamu tidak bisa menarik uang dibawah 0")
-    else:
-        user[0].tarik(inputUang)
+        return
+    
+    user[0].tarik(inputUang)
 
 def changePIN(users):
     print("\n\tMenu Tarik")
@@ -120,8 +124,10 @@ def main():
 
     loginCheck = login(users)
 
+    statusCheck(users)
+
     if loginCheck:
-        while True:
+        while choice != 4:
             choice = display_menu()
             if choice == 1:
                 deposit(users)
@@ -130,7 +136,7 @@ def main():
             elif choice == 3:
                 changePIN(users)
             else:
-                exit
+                return
 
 if __name__ == "__main__":
     main()
