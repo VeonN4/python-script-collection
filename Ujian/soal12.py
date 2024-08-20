@@ -8,7 +8,7 @@ if x > y and x > z:
         print("Angka terkecil adalah:", y)
     elif z < y:
         print("Angka terkecil adalah:", z)
-elif y > x and y > z
+elif y > x and y > z:
     print("Angka terbesar adalah:", y)
     if x < z:
         print("Angka terkecil adalah:", x)
