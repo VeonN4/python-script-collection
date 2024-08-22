@@ -12,5 +12,5 @@ c = a + angka3
 
 d = c / 3
 
-print(b)
-print(d)
+print("Rata-rata:", b)
+print("Rata-rata", d)
