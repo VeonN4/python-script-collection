@@ -1,10 +1,8 @@
 print("\tKasus 1")
 
-# Menginput jam masuk , jam pulang, dan menginisiasi variabel hour
+# Menginput jam masuk dan jam pulang
 jamMasuk = int(input("Masukan jam masuk (1-12): "))
 jamPulang = int(input("Masukan jam pulang (1-12): "))
-hour = 0
-
 
 # Mengecek apakah jam masuk kurang dari 1 atau lebih dari 12
 if jamMasuk > 12:
@@ -18,20 +16,12 @@ if jamPulang > 12:
 elif jamPulang < 1:
     print("Kamu tidak boleh memasukan angka kurang dari 1!")
 
-# Mengecek apakah jam kurang dari 10. Jika iya, akan menambahkan 12 dan mengecek apakah jam sama dengan 12
-if jamPulang < 10:
-    jamPulang = 12 + jamPulang
-if jamMasuk < 10:
-    jamMasuk = 12 + jamMasuk
+# Mengecek jam masuk dan pulang, jika jam masuk lebih besar dari jam pulang maka, jam pulang ditambah 12 dikurangi jam masuk
+if jamMasuk > jamPulang:
+    jamKerja = (jamPulang + 12) - jamMasuk
 
-            
+# Mengecek jam masuk dan pulang, jika jam masuk kurang dari sama dengan jam pualng maka, jam pulang akan dikurangi jam masuk
+elif jamMasuk <= jamPulang:
+    jamKerja = jamPulang - jamMasuk
 
-# Pengulangan untuk mencari lama kerja
-if jamMasuk < jamPulang:
-    for i in range(jamMasuk, jamPulang):
-        hour += 1
-elif jamPulang < jamMasuk:
-    for i in range(jamPulang, jamMasuk):
-        hour += 1
-
-print("Lama kerja:", hour, "jam")
+print("Lama kerja:", jamKerja, "jam")
