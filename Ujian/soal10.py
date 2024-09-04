@@ -6,5 +6,5 @@ if totalhargaBarang >= 100000:
     hasil = (5/100) * totalhargaBarang
     print("Hasil Diskon Rp.", hasil)
     print("Total Barang Yang dibayar Rp.", totalhargaBarang - hasil)
-    
-print("Total Barang Yang dibayar Rp.", totalhargaBarang)
+else:
+    print("Total Barang Yang dibayar Rp.", totalhargaBarang)
