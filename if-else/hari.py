@@ -50,6 +50,3 @@ year = cekTahun(inputYear)
 monthKey, monthValue = cekBulan(bulan)
 
 print("Tahun", year, "Bulan", monthKey, "memiliki", monthValue, "hari\n")
-
-#cekTahun(inputYear)
-#print("Bulan", month)
